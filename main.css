@@ -1,0 +1,80 @@
+html {
+    --nav-background: #ED4C67;
+    --nav-border: .5rem solid #B53471;
+  }
+  .mclaren {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100px;
+    height: 100px;
+  }
+   .mclaren {
+    float: right;
+    width: 50px;
+    height: 50px;
+
+   }
+  nav {
+    background: var(--nav-background);
+    border: var(--nav-border);
+    margin-bottom: 1em;
+    font-size: 2rem; 
+  }
+  
+  nav :is(ul, li) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+  
+  nav ul li {
+    padding: .5em;
+    transition: .3s;
+  }
+  
+  nav ul li:hover {
+    background-color: rgba(255, 255, 255, .5);
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav a:active {
+    color: yellowgreen;
+  }
+  
+  nav a:visited {
+    color: red;
+  }
+  
+  nav > ul > li {
+    position: relative;
+  }
+  
+  nav ul li:has(ul)::after {
+    content: ">";
+    color: white;
+  }
+  
+  nav > ul > li > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+  }
+  
+  nav > ul > li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav > ul > li > ul > li {
+    display: block;
+  }
